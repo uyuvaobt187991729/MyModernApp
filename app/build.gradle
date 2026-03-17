@@ -1,35 +1,31 @@
-plugins {
-	    id 'com.android.application'
-	        id 'org.jetbrains.kotlin.android'
-	        }
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"
+    }
+}
 
-	        android {
-	        	    namespace 'com.example.myapp'
-	        	        compileSdk 34
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
-	        	            defaultConfig {
-	        	            	        applicationId "com.example.myapp"
-	        	            	                minSdk 24
-	        	            	                        targetSdk 34
-	        	            	                                versionCode 1
-	        	            	                                        versionName "1.0"
-	        	            	                                            }
+android {
+    namespace 'com.example.mymodernapp'
+    compileSdk 34
 
-	        	            	                                                buildFeatures {
-	        	            	                                                	        compose true
-	        	            	                                                	            }
+    defaultConfig {
+        applicationId "com.example.mymodernapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+}
 
-	        	            	                                                	                composeOptions {
-	        	            	                                                	                	        kotlinCompilerExtensionVersion '1.5.1'
-	        	            	                                                	                	            }
-
-	        	            	                                                	                	                kotlinOptions {
-	        	            	                                                	                	                	        jvmTarget = '17'
-	        	            	                                                	                	                	            }
-	        	            	                                                	                	                	            }
-	        	            	                                                	                	                }
-	        	            	                                                	                }
-	        	            	                                                }
-	        	            }
-	        }
+repositories {
+    google()
+    mavenCentral()
 }
